@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <form action="{% url 'cadastrar' %}" method="post">
+        {% csrf_token %}
+        Nome: <input type="text" name="nome_produto">
+        Descriçao:<input type="text" name="descriçao_produto">
+        Preço: <input step="0.01" type="number" name="preço_produto">
+        <button type="submit">salvar</button>
+    </form>
+
 </body>
+
 </html>
